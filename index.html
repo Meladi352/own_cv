@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porfolio</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header" style="background-image: url(Images/banner.png);">
+        <div class="container">
+            <nav><p class="logo"><b>My<span> Portfolio</b></span></p>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-desck">
+            <img src="./Images/Avatar.svg" alt="">
+            <p><b>I'm Kseniia,</b></p>
+            <h1>Frontend Developer <br>from <span>Finland</span></h1>
+            
+        </div>
+        </div>
+    </div>
+<!-- about -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./Images/Me.jpeg">
+                </div>
+                <div class="about-col-2">
+                    <h2 class="sub-title">About me</h2>
+                    <p>Hello! I'm Kseniia, an aspiring frontend developer. I'm enthusiastically learning HTML, CSS, and JavaScript, as well as getting familiar with React.js. My projects include landing pages, to-do lists, and portfolios. My portfolio website showcases my work and the efforts I put into developing my skills. Feel free to explore to learn more about my projects and my journey in the world of web development!</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links " onclick="opentab('languages')">Languages</p>
+                        <p class="tab-links " onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>HTML</span><br>CSS</li>
+                            <li><span>JavaScript</span><br>React</li>
+                            <li><span>Figma</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="languages">
+                        <ul>
+                            <li><span>English</span><br>intermediate</li>
+                            <li><span> Finnish</span><br>intermediate</li>
+                            <li><span>Russian</span><br>native</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Pohjois-Karjalan koulutuskuntayhtymä Riveria</span><br>Tieto-ja viestintätekniikan perustutkinto</li>
+                            <li><span>April 2022-Present</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- projects -->
+
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">My projects</h1>
+        <div class="projects-list">
+            <div>
+                <img src="./Images/Projects/ToDo List.jpg" >
+                <h2>ToDo List</h2>
+                <p>ToDo application in JavaScript. Standard functionality of the ToDo application. Tasks are stored in Local Storage.</p>
+                <a href="https://meladi352.github.io/ToDo/" target="_blank">Lern more</a>
+            </div>
+            <div>
+                <img src="./Images/Projects/Landing_page.jpg">
+                <h2>Landing-page</h2>
+                <p>Landing website built using HTML5, CSS3 and SASS. Design based on an open source layout in the Figma community.</p>
+                <a href="https://meladi352.github.io/Landing-page/" target="_blank">Lern more</a>
+            </div>
+            <div>
+                <img src="./Images/Projects/Project porfolio.jpg" >
+                <h2>Project-portfolio</h2>
+                <p>Portfolio website for front-end developer implemented using HTML5, CSS3 and JavaScript.</p>
+                <a href="https://meladi352.github.io/project-portfolio/" target="_blank">Lern more</a>
+            </div>
+    </div>
+</div>
+
+<!-- contact -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p> <i class="fa-solid fa-paper-plane"></i>ksenija.surmenkova@gmail.com</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/kseniia-surmenkova-41771321a/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Meladi352" target="_blank"><i class="fa-brands fa-github" ></i></a>
+                </div>
+                <a href="CV/Kseniia Surmenkova.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg">hello</span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Made with <i class="fa-solid fa-heart"></i> by Kseniia Surmenkova</p>
+    </div>
+</div>
+
+    <script>
+
+        let tablinks = document.getElementsByClassName("tab-links");
+        let tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+    </script>
+
+    <script>
+        let sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+           
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyrcFOhlzGEHXyV25xxD2lKmrygI9lsz580fE6YQBmCix2eWEuhYsHJH1ct71Kh4Oy5/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response =>{
+                msg.innerHTML="Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            } )
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
